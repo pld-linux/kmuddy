@@ -39,7 +39,7 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	kde_htmldir=%{_kdedocdir}
 
-install -d $RPM_BUILD_ROOT%{_desktopdir}
+install -d $RPM_BUILD_ROOT%{_desktopdir}/kde
 
 # FIXME (desktop file name)
 mv $RPM_BUILD_ROOT%{_datadir}/applnk/Games/kmuddy.desktop \
@@ -49,10 +49,12 @@ mv $RPM_BUILD_ROOT%{_datadir}/applnk/Games/kmuddy.desktop \
 echo "Categories=Qt;KDE;Game;" >> \
 	$RPM_BUILD_ROOT%{_desktopdir}/kde/kmuddy.desktop
 
+%find_lang %{name} --with-kde
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
 %{_desktopdir}/kde/*
