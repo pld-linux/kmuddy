@@ -1,5 +1,5 @@
 Summary:	MUD (Multiple Users Dungeon) client for KDE
-Summary(pl):	Klient MUD'a pod KDE
+Summary(pl):	Klient MUD-a dla KDE
 Name:		kmuddy
 Version:	0.6.1
 Release:	1
@@ -20,15 +20,14 @@ features you'd expect from a MUD client - aliases, triggers,
 variables, scripting(external) MCCP and MSP protocols and many more...
 
 %description -l pl
-KMuddy to klient MUD'a pod KDE, posiadaj±cy wszystkie cechy jakich by¶
-oczekiwa³ od klienta MUD'a - aliasy, trigery, zmienne, skrypty MCCP i
-MSP, oraz wiele innych...
+KMuddy to klient MUD-a dla KDE, posiadaj±cy wszystkie cechy jakich
+mo¿na oczekiwaæ od klienta MUD-a - aliasy, trigery, zmienne, skrypty
+MCCP i MSP, oraz wiele innych...
 
 %prep
 %setup -q
 
 %build
-
 %configure
 
 %{__make}
@@ -41,7 +40,6 @@ rm -rf $RPM_BUILD_ROOT
 	kde_htmldir=%{_kdedocdir}
 
 install -d $RPM_BUILD_ROOT%{_desktopdir}
-
 
 # FIXME (desktop file name)
 mv $RPM_BUILD_ROOT%{_datadir}/applnk/Games/kmuddy.desktop \
