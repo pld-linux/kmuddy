@@ -24,14 +24,11 @@ KMuddy to klient MUD'a pod KDE, posiadaj±cy wszystkie cechy jakich by¶
 oczekiwa³ od klienta MUD'a - aliasy, trigery, zmienne, skrypty MCCP i
 MSP, oraz wiele innych...
 
-
 %prep
 %setup -q
 
 %build
-kde_appsdir="%{_applnkdir}"; export kde_appsdir
-kde_htmldir="%{_htmldir}"; export kde_htmldir
-kde_icondir="%{_pixmapsdir}"; export kde_icondir
+
 %configure
 
 %{__make}
@@ -40,7 +37,19 @@ kde_icondir="%{_pixmapsdir}"; export kde_icondir
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+	DESTDIR=$RPM_BUILD_ROOT \
+	kde_htmldir=%{_kdedocdir}
+
+install -d $RPM_BUILD_ROOT%{_desktopdir}
+
+
+# FIXME (desktop file name)
+mv $RPM_BUILD_ROOT%{_datadir}/applnk/Games/kmuddy.desktop \
+	$RPM_BUILD_ROOT%{_desktopdir}/kde
+
+# FIXME (category)
+echo "Categories=Qt;KDE;Game;" >> \
+	$RPM_BUILD_ROOT%{_desktopdir}/kde/kmuddy.desktop
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -48,5 +57,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
-%{_applnkdir}/Games/*
-%{_pixmapsdir}/*/*/*/*
+%{_desktopdir}/kde/*
+%{_iconsdir}/*/*/*/*
