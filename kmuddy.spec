@@ -14,8 +14,6 @@ BuildRequires:	kdelibs-devel >= 9:3.0
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define         _htmldir        /usr/share/doc/kde/HTML
-
 %description
 KMuddy is a MUD (Multiple Users Dungeon) client, that supports all the
 features you'd expect from a MUD client - aliases, triggers,
