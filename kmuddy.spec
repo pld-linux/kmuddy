@@ -1,13 +1,13 @@
 Summary:	MUD (Multiple Users Dungeon) client for KDE
 Summary(pl):	Klient MUD-a dla KDE
 Name:		kmuddy
-Version:	0.6.1
+Version:	0.7.1
 Release:	1
 License:	GPL
 Group:		X11/Applications/Games
-Source0:	http://www.kmuddy.org/files/%{name}-%{version}.tar.gz
-# Source0-md5:	5e6d09abcf95862c4398a0d6d88e5a10
-URL:		http://www.kmuddy.org/
+Source0:	http://www.kmuddy.net/files/%{name}-%{version}.tar.gz
+# Source0-md5:	54146de43c0462b60c1328ab348c7789
+URL:		http://www.kmuddy.net/
 BuildRequires:	arts-qt-devel
 BuildRequires:	artsc-devel
 BuildRequires:	kdelibs-devel >= 9:3.0
@@ -59,3 +59,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_desktopdir}/kde/*
 %{_iconsdir}/*/*/*/*
+%{_mandir}/man1/*
+%{_datadir}/%{name}
