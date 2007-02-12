@@ -1,5 +1,5 @@
 Summary:	MUD (Multiple Users Dungeon) client for KDE
-Summary(pl):	Klient MUD-a dla KDE
+Summary(pl.UTF-8):   Klient MUD-a dla KDE
 Name:		kmuddy
 Version:	0.7.1
 Release:	1
@@ -19,9 +19,9 @@ KMuddy is a MUD (Multiple Users Dungeon) client, that supports all the
 features you'd expect from a MUD client - aliases, triggers,
 variables, scripting(external) MCCP and MSP protocols and many more...
 
-%description -l pl
-KMuddy to klient MUD-a dla KDE, posiadaj±cy wszystkie cechy jakich
-mo¿na oczekiwaæ od klienta MUD-a - aliasy, trigery, zmienne, skrypty
+%description -l pl.UTF-8
+KMuddy to klient MUD-a dla KDE, posiadajÄ…cy wszystkie cechy jakich
+moÅ¼na oczekiwaÄ‡ od klienta MUD-a - aliasy, trigery, zmienne, skrypty
 MCCP i MSP, oraz wiele innych...
 
 %prep
