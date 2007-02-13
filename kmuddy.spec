@@ -1,5 +1,5 @@
 Summary:	MUD (Multiple Users Dungeon) client for KDE
-Summary(pl.UTF-8):   Klient MUD-a dla KDE
+Summary(pl.UTF-8):	Klient MUD-a dla KDE
 Name:		kmuddy
 Version:	0.7.1
 Release:	1
