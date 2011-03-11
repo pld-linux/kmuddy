@@ -8,6 +8,7 @@ Group:		X11/Applications/Games
 Source0:	http://www.kmuddy.com/releases/stable/%{name}-%{version}.tar.gz
 # Source0-md5:	b98a1753c728134c80fd253e454e41ce
 Patch0:		%{name}-link.patch
+Patch1:		%{name}-desktop.patch
 URL:		http://www.kmuddy.com/
 BuildRequires:	cmake
 BuildRequires:	kde4-kdelibs-devel
@@ -29,6 +30,7 @@ MCCP i MSP, oraz wiele innych...
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 # fix c++ syntax
 %{__sed} -i 's,QColor::,,' plugins/mapper/filefilters/cmapfilefilterkmudone.cpp
@@ -44,19 +46,13 @@ cd build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_desktopdir}/kde
+install -d $RPM_BUILD_ROOT%{_desktopdir}/kde4
 
 %{__make} -C build install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	kde_htmldir=%{_kdedocdir}
 
-# FIXME (desktop file name)
-#mv $RPM_BUILD_ROOT%{_datadir}/applnk/Games/kmuddy.desktop \
-#	$RPM_BUILD_ROOT%{_desktopdir}/kde
-
-# FIXME (category)
-#echo "Categories=Qt;KDE;Game;" >> \
-#	$RPM_BUILD_ROOT%{_desktopdir}/kde/kmuddy.desktop
+install kmuddy/kmuddy.desktop $RPM_BUILD_ROOT%{_desktopdir}/kde4
 
 # drop unnecessary files
 %{__rm} -r $RPM_BUILD_ROOT%{_includedir}
@@ -78,3 +74,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/kmuddy
 %{_datadir}/kde4/services/*.desktop
 %{_datadir}/kde4/servicetypes/*.desktop
+%{_desktopdir}/kde4/kmuddy.desktop
+%{_iconsdir}/hicolor/*/apps/kmuddy.png
