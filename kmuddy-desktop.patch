@@ -1,0 +1,22 @@
+--- kmuddy-1.0.1/kmuddy/kmuddy.desktop~	2008-05-19 18:19:42.000000000 +0200
++++ kmuddy-1.0.1/kmuddy/kmuddy.desktop	2011-03-11 11:58:26.248022329 +0100
+@@ -1,14 +1,13 @@
+ [Desktop Entry]
+-Version=1.0
+ Encoding=UTF-8
+ Name=KMuddy
+ Type=Application
+ Exec=kmuddy -caption "%c" %i %m
+-Icon=kmuddy.png
+-DocPath=kmuddy/index.html
++Icon=kmuddy
+ GenericName=MUD client
++GenericName[pl]=Klient MUD
+ Comment=MUD client
+-Comment[de]=
++Comment[pl]=Klient MUD
+ Terminal=false
+-Name[de]=KMuddy
+-GenericName[en_CA]=MUD client
++Categories=Qt;KDE;Game;
++# vi: encoding=utf-8
