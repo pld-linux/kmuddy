@@ -1,3 +1,6 @@
+#
+# TODO: mapper plugin doesn't work properly
+#
 Summary:	MUD (Multiple Users Dungeon) client for KDE
 Summary(pl.UTF-8):	Klient MUD-a dla KDE
 Name:		kmuddy
