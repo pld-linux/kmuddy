@@ -32,8 +32,8 @@ MCCP i MSP, oraz wiele innych...
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
+%patch -P0 -p1
+%patch -P1 -p1
 
 # fix c++ syntax
 %{__sed} -i 's,QColor::,,' plugins/mapper/filefilters/cmapfilefilterkmudone.cpp
